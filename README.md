@@ -10,7 +10,8 @@ Specialities for Addis Ababa
 ----------------------------
 
 * `route_short_name` is cleaned up until the correct naming is decided by the authorities and can be edited on OSM
-
+* `timepoint` is set to 0 for all but the first and last stop, also we include it always as recommended by the https://gtfs-validator.mobilitydata.org validator.
+  
 License
 -------
 
