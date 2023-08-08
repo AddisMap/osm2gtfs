@@ -17,7 +17,7 @@
     "agency": {
         "agency_id": "AA",
         "agency_name": "Addis Ababa Transport (all)",
-        "agency_url": "https://example.com",
+        "agency_url": "https://addismaptransit.com/",
         "agency_timezone": "Africa/Addis_Ababa",
         "agency_lang": "en",
         "agency_phone": "",
@@ -29,8 +29,8 @@
         "version": "0.1",
         "start_date": "20191201",
         "end_date": "20991231",
-        "feed_contact_email": "info@addismap.com",
-        "feed_contact_url": "https://addismaptransit.com"
+        "contact_email": "info@addismap.com",
+        "contact_url": "https://addismaptransit.com/support/"
     },
     "output_file": "data/et-addisababa.zip",
     "selector": "et_addisababa"
