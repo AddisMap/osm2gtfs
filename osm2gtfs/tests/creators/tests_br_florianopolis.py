@@ -51,7 +51,7 @@ class TestCreatorsBrFlorianopolis(CreatorsTestsAbstract):
         with patch("osm2gtfs.core.osm_connector.OsmConnector._query_routes") as mocked1:
             with open(mocked_overpass_data_file, mode='r') as ov:
                 overpass_xml = ov.read()
-                api = overpy.Overpass()
+                api = overpy.Overpass(url='https://overpass.private.coffee/api/interpreter')
                 mocked1.return_value = api.parse_xml(overpass_xml)
                 data.get_routes(refresh=True)
         self.assertTrue(os.path.isfile(cache_file), 'The routes cache file creation failed')
