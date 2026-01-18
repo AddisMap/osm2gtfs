@@ -567,9 +567,10 @@ class OsmConnector(object):
         """
         # Query relations of route variants, their masters and geometry
         api = overpy.Overpass(url='https://overpass.private.coffee/api/interpreter')
-        query_str = """(
+        query_str = """
             [timeout:600]
             ;
+            (
 
             /* Obtain route variants based on tags and bounding box */
             relation%s(%s)->.routes;
@@ -597,9 +598,10 @@ class OsmConnector(object):
         """
         # Query stops with platform role from selected relations
         api = overpy.Overpass(url='https://overpass.private.coffee/api/interpreter')
-        query_str = """(
+        query_str = """
             [timeout:600]
             ;
+            (
 
             /* Obtain route variants based on tags and bounding box */
             relation%s(%s);
