@@ -727,9 +727,7 @@ class OsmConnector(object):
         api = overpy.Overpass(url='https://maps.mail.ru/osm/tools/overpass/api/interpreter')
 
         result = api.query("""
-        [timeout:600]
-        ;
-        <osm-script>
+        <osm-script timeout="600">
           <query type="way">
             <around lat="%s" lon="%s" radius="50.0"/>
             <has-kv k="name" />
