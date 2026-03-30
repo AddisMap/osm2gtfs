@@ -5,6 +5,12 @@ Based on https://github.com/grote/osm2gtfs
 
 Used to generate https://github.com/AddisMap/AddisMapTransit-gtfs
 
+Configuration
+-------------
+
+* Set `OSM2GTFS_OVERPASS_URL` to use a single Overpass endpoint for all OSM queries.
+* If the variable is unset, osm2gtfs falls back to `https://overpass-api.de/api/interpreter`.
+
 
 Specialities for Addis Ababa
 ----------------------------

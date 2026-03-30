@@ -2,13 +2,13 @@ import unittest
 import os
 import zipfile
 import csv
-import overpy
 import transitfeed
 
 from mock import patch
 from io import TextIOWrapper
 from osm2gtfs.core.configuration import Configuration
 from osm2gtfs.core.osm_connector import OsmConnector
+from osm2gtfs.core.overpass import get_overpass_api
 from osm2gtfs.core.creator_factory import CreatorFactory
 from osm2gtfs.core.cache import Cache
 
@@ -117,7 +117,7 @@ class CreatorsTestsAbstract(unittest.TestCase):
         with patch("osm2gtfs.core.osm_connector.OsmConnector._query_routes") as mocked1:
             with open(mocked_overpass_data_file, mode="r") as ov:
                 overpass_xml = ov.read()
-                api = overpy.Overpass(url='https://overpass.private.coffee/api/interpreter')
+                api = get_overpass_api()
                 mocked1.return_value = api.parse_xml(overpass_xml)
                 data.get_routes(refresh=True)
         self.assertTrue(
@@ -138,7 +138,7 @@ class CreatorsTestsAbstract(unittest.TestCase):
         with patch("osm2gtfs.core.osm_connector.OsmConnector._query_stops") as mocked1:
             with open(mocked_overpass_data_file, mode="r") as ov:
                 overpass_xml = ov.read()
-                api = overpy.Overpass(url='https://overpass.private.coffee/api/interpreter')
+                api = get_overpass_api()
                 mocked1.return_value = api.parse_xml(overpass_xml)
                 data.get_stops(refresh=True)
         self.assertTrue(

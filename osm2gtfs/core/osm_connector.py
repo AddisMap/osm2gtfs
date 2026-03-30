@@ -8,6 +8,7 @@ import webcolors
 from transitfeed import util
 from osm2gtfs.core.cache import Cache
 from osm2gtfs.core.helper import Helper
+from osm2gtfs.core.overpass import get_overpass_api
 from osm2gtfs.core.elements import Line, Itinerary, Station, Stop
 
 
@@ -566,7 +567,7 @@ class OsmConnector(object):
 
         """
         # Query relations of route variants, their masters and geometry
-        api = overpy.Overpass(url='https://maps.mail.ru/osm/tools/overpass/api/interpreter')
+        api = get_overpass_api()
         query_str = """
             [timeout:600]
             ;
@@ -597,7 +598,7 @@ class OsmConnector(object):
 
         """
         # Query stops with platform role from selected relations
-        api = overpy.Overpass(url='https://maps.mail.ru/osm/tools/overpass/api/interpreter')
+        api = get_overpass_api()
         query_str = """
             [timeout:600]
             ;
@@ -724,7 +725,7 @@ class OsmConnector(object):
         """Define name for stop without explicit name based on sourroundings
 
         """
-        api = overpy.Overpass(url='https://maps.mail.ru/osm/tools/overpass/api/interpreter')
+        api = get_overpass_api()
 
         result = api.query("""
         <osm-script timeout="600">
