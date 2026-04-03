@@ -5,7 +5,7 @@ import os
 import overpy
 
 #DEFAULT_OVERPASS_URL = "https://overpass-api.de/api/interpreter"
-DEFAULT_OVERPASS_URL = "http://ethiopia.overpass.openplaceguide.org/api/interpreter"
+DEFAULT_OVERPASS_URL = "https://ethiopia.overpass.openplaceguide.org/api/interpreter"
 OVERPASS_URL_ENV_VAR = "OSM2GTFS_OVERPASS_URL"
 
 
